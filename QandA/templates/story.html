@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Истории</title>
+</head>
+<style>
+    body
+    {
+        background-image:url("https://sotni.ru/wp-content/uploads/2023/08/pozitivnyi-fon-na-rabochii-stol-4-1.webp");
+        background-repeat:no-repeat;
+        background-size:cover;
+    }
+    .main1{
+        margin:0 auto;
+        background-color:aliceblue;
+        padding:20px;
+        width:700px;
+        border-radius:50px;
+    }
+    button{
+        background-color:green;
+        color:white;
+        padding: 10px;
+        border-radius:10px;
+    }
+</style>
+<body>
+<div class="main1">
+  <a href="/">Назад</a>
+
+  <h1>Забавные истории</h1>
+  <h2>Генерация историй по Вашему запросу</h2>
+
+<form method="post">
+  <label for="name">Как зовут персонажа?</label>
+  <input type="text" id="name" name="name">
+<br><br>
+   <label for="place">Напиши место где происходит действие?</label>
+  <input type="text" id="place" name="place">
+<br><br>
+   <label for="item">Напиши какую-то вещь/существо(все что угодно)?</label>
+  <input type="text" id="item" name="item">
+<br><br>
+  <button type="submit">Создать историю</button>
+</form>
+
+{% if story %}
+<h2>Вот Ваша история</h2>
+<p>{{ story }}</p>
+{% endif %}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOC TYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вопросы и ответы</title>
+</head>
+
+<style>
+    body{
+        background-color: aliceblue;
+    }
+    .quiz-container{
+        background-color: white;   /* задний фон */
+        width: 400px;              /* ширина нашего контейнера   */
+        border: solid 5px blue;    /*  рамка  */
+        border-radius: 20px;       /* округление рамки*/
+        padding: 10px;             /*  внутренние отступы */
+        margin: 0 auto;            /*  перещение по центру */
+    }
+    button{
+        background-color: green;
+        color:red;        /*  цвет текста  */
+        font-size:20px;   /* размер шрифта  */
+        font-family:Times, Times New Roman, serif;
+    }
+    p{
+        color:green;
+    }
+</style>
+
+<body>
+  <center>  <h1>Викторина</h1></center>
+<!--  это мой комментарий -->
+    <div class="quiz-container">
+
+    <p> {{ question["text"] }}</p>
+    <form method="POST">
+        {% for option in question["options"] %}
+            <input type="radio" name="answer" value="{{option}}" required> {{option}} <br>
+        {% endfor %}
+        <button type="submit">Ответить</button>
+    </form>
+
+    </div>
+
+</body>
+</html>
